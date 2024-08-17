@@ -17,8 +17,8 @@ app.use(express.json()); // it is a middleware , used to show json data in app..
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use('/products', productService)
-app.use('/category', categoryService)
+app.use(productService)
+app.use(categoryService)
 app.use(userService)
 
 app.get('/', (req, res) => {
