@@ -22,7 +22,15 @@ app.use('/category', categoryService)
 app.use(userService)
 
 app.get('/', (req, res) => {
-    res.send("hello world")
-})
+    const endpoints = {
+        products: "/products",
+        categories: "/category",
+        users: "/users"
+    };
+    res.json({
+        message: "Welcome to our API. Here are the available endpoints:",
+        endpoints
+    });
+});
 
 app.listen(port, () => console.log('server running on port'))   // server port,
