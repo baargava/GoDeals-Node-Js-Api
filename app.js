@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const productService = require('./Routes/ProductService')
+const { productService, productRoutes } = require('./Routes/ProductService')
 const categoryService = require('./Routes/CategoryService')
 const userService = require('./Routes/UserService')
 // const bodyParser = require('body-parser')
@@ -23,7 +23,7 @@ app.use(userService)
 
 app.get('/', (req, res) => {
     const endpoints = {
-        products: "/products",
+        products: productRoutes,
         categories: "/category",
         users: "/users"
     };
