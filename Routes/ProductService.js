@@ -75,8 +75,4 @@ productService.delete('/deleteproduct/:id', async (req, res) => {
     }
 })
 
-const productRoutes = [
-    { method: 'GET', path: '/getallproducts' },
-];
-
-module.exports = { productService, productRoutes };
+module.exports = productService;
